@@ -76,14 +76,14 @@ public class IRC_Server {
 		TreeSet<ClientThread> users = inChannel ? 
 				channels.get(ct.getChannel()) : clients;
 
-				String where = inChannel ? "in channel" : "on server";
-				out.format(">> Users online %s:\n", where);
+		String where = inChannel ? "in channel" : "on server";
+		out.format(">> Users online %s:\n", where);
 
-				synchronized (users) {
-					for (ClientThread c : users) {
-						out.println(">> " + c);
-					}
-				}
+		synchronized (users) {
+			for (ClientThread c : users) {
+				out.println(">> " + c);
+			}
+		}
 	}
 
 	/**
